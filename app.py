@@ -194,14 +194,13 @@ api_handler = SimpleAPI()
 
 @app.route('/')
 def home():
-    return jsonify({
-        "status": "success",
-        "message": "Request successful by ghost hbb",
-        "endpoints": {
-            "/ghost?teamcode=CODE&name=NAME&api_key=KEY"
-        }
-    })
-
+   return jsonify({
+    "status": "success",
+    "message": "Request successful by ghost hbb",
+    "endpoints": [
+        "/ghost?teamcode=CODE&name=NAME&api_key=KEY"
+    ]
+})
 @app.route('/ghost')
 def ghost():
     teamcode = request.args.get('teamcode')
